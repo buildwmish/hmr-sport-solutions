@@ -1,0 +1,136 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import lineArtTwo from '../assets/img/line-art-2.svg';
+---
+
+<BaseLayout>
+  <Header />
+  <main id="main-content">
+    <Hero />
+
+    <section id="when-to-bring-me-in" class="section section-soft">
+      <div class="container narrow">
+        <SectionIntro heading="When to bring me in" intro="Bring me in when:" />
+        <ul class="clean-list">
+          <li>the direction is not yet settled, but momentum is building</li>
+          <li>options are contested and stakeholders are not yet aligned</li>
+          <li>the investment case is forming, but the logic needs testing</li>
+          <li>there is pressure to move, but readiness is still unclear</li>
+          <li>the consequences of getting the next step wrong are material</li>
+        </ul>
+        <p>
+          This is usually the point where independent advice adds most value: when the decision is live, the pressure is
+          real, and the cost of a poor call will show up later.
+        </p>
+      </div>
+    </section>
+
+    <section id="what-i-do" class="section">
+      <div class="container narrow">
+        <SectionIntro heading="What I actually do" />
+        <div class="prose">
+          <p>
+            I provide independent advice when organisations need to decide what to do, why it stacks up, and whether the
+            timing is right.
+          </p>
+          <p>
+            The work usually involves clarifying the real decision, testing assumptions and investment logic, working
+            through stakeholder complexity, and assessing sequencing, readiness and risk.
+          </p>
+          <p>
+            I am brought in early enough to question the brief, sharpen the case, and reduce the risk of premature lock-in.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-soft">
+      <div class="container">
+        <SectionIntro heading="Selected experience" />
+        <div class="experience-list">
+          <ExperienceCard
+            number={1}
+            title="Local board advisory work"
+            bodyOne="Commissioned by multiple Auckland local boards on fixed-scope sport and active recreation planning and access-related work."
+            bodyTwo="The focus has been on helping decision-makers work through supply, demand, provision, investment priorities, advocacy priorities and local access questions before further commitments are made."
+          />
+          <ExperienceCard
+            number={2}
+            title="Public-sector systems and leasing decisions"
+            bodyOne="Led cross-council work to improve the community leasing process so peppercorn leases could be used more effectively to deliver public and community benefit."
+            bodyTwo="This involved balancing policy intent, sector input, implementation realities and competing priorities inside local government."
+          />
+          <ExperienceCard
+            number={3}
+            title="University recreation facility readiness"
+            bodyOne="Worked within a major university recreation environment during facility transition, operational setup and business unit growth."
+            bodyTwo="That created direct visibility into how early planning, design and investment decisions translate into operating reality once a facility opens."
+          />
+          <ExperienceCard
+            number={4}
+            title="National sport and system context"
+            bodyOne="Worked across Sport New Zealand in roles spanning sport development, special projects and the ongoing development of the Balance is Better platform."
+            bodyTwo="This provided strong exposure to how direction is formed within institutions, how priorities are interpreted across functions, and how national thinking is carried into the sector."
+          />
+          <ExperienceCard
+            number={5}
+            title="Major event readiness"
+            bodyOne="Worked within the FIFA Women’s World Cup host city programme across training venue settings."
+            bodyTwo="This meant operating in a setting where sequencing, coordination, readiness and public scrutiny all mattered under fixed deadlines."
+          />
+          <ExperienceCard
+            number={6}
+            title="Regional funding and programme scale"
+            bodyOne="Led regional KiwiSport investment and helped scale the Good Sports programme from pilot to nationally recognised programme."
+            bodyTwo="This built practical experience in how funding settings, programme design and stakeholder incentives shape behaviour and outcomes across a wider system. Good Sports later received national recognition for its impact."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow about-grid">
+        <div>
+          <SectionIntro heading="About" />
+          <div class="prose">
+            <p>
+              My experience spans Sport New Zealand, Auckland Council, Tātaki Auckland Unlimited, the University of
+              Auckland and Aktive.
+            </p>
+            <p>
+              Across those environments, the pattern has been consistent: important decisions are often made while
+              assumptions are still weak, stakeholders are not fully aligned, and pressure to progress is stronger than the
+              case for doing so.
+            </p>
+            <p>That is usually where I add most value.</p>
+            <p>
+              I now work independently, helping organisations make better decisions earlier, before commitments harden and
+              before avoidable complexity becomes someone else’s problem.
+            </p>
+          </div>
+        </div>
+        <div class="about-art" aria-hidden="true">
+          <img src={lineArtTwo.src} alt="" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-soft">
+      <div class="container narrow">
+        <SectionIntro heading="Contact" intro="If you’re working through a decision like this, feel free to get in touch." />
+        <ContactForm />
+        <p class="contact-alt">
+          Not a fan of forms? Email me directly at
+          <a href="mailto:hamish@hmrsportsolutions.co">hamish@hmrsportsolutions.co</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

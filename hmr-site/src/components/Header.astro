@@ -1,0 +1,71 @@
+---
+import logo from '../assets/img/logo.svg';
+---
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="HMR Sport Solutions home">
+      <img src={logo.src} width="300" height="72" alt="HMR Sport Solutions" loading="eager" decoding="async" />
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+      <span class="sr-only">Open menu</span>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#when-to-bring-me-in">When to bring me in</a>
+      <a href="#what-i-do">What I do</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="header-cta" href="#contact">Get in touch</a>
+  </div>
+
+  <div class="mobile-panel" id="mobile-nav" hidden data-mobile-panel>
+    <nav aria-label="Mobile">
+      <a href="#when-to-bring-me-in">When to bring me in</a>
+      <a href="#what-i-do">What I do</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const panel = document.querySelector('[data-mobile-panel]');
+
+  if (toggle && panel) {
+    const links = panel.querySelectorAll('a');
+
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('is-open');
+      panel.setAttribute('hidden', '');
+      document.body.classList.remove('menu-open');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.classList.toggle('is-open', !isOpen);
+
+      if (isOpen) {
+        panel.setAttribute('hidden', '');
+      } else {
+        panel.removeAttribute('hidden');
+      }
+
+      document.body.classList.toggle('menu-open', !isOpen);
+    });
+
+    links.forEach((link) => link.addEventListener('click', closeMenu));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  }
+</script>

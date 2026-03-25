@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 720" fill="none" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">HMR Sport Solutions</title>
+  <desc id="logoDesc">HMR Sport Solutions logo with overlapping circles above the HMR wordmark</desc>
+
+  <g transform="translate(0 8)">
+    <circle cx="390" cy="140" r="112" stroke="#018A99" stroke-width="12" />
+    <circle cx="502" cy="140" r="112" stroke="#018A99" stroke-width="12" />
+
+    <clipPath id="overlapClip">
+      <circle cx="446" cy="140" r="112" />
+    </clipPath>
+
+    <g clip-path="url(#overlapClip)">
+      <path d="M336 36L552 252" stroke="#018A99" stroke-width="12" />
+      <path d="M316 56L532 272" stroke="#018A99" stroke-width="12" />
+      <path d="M356 16L572 232" stroke="#018A99" stroke-width="12" />
+      <path d="M376 -4L592 212" stroke="#018A99" stroke-width="12" />
+      <path d="M296 76L512 292" stroke="#018A99" stroke-width="12" />
+    </g>
+  </g>
+
+  <g fill="#013E48" aria-hidden="true">
+    <path d="M24 614V286h64v134h118V286h64v328h-64V474H88v140H24Z" />
+    <path d="M334 614V286h10l108 117 108-117h10v328h-62V418l-56 60-56-60v196h-62Z" />
+    <path d="M634 614V286h164c67 0 106 41 106 96 0 40-20 70-56 84l72 148h-72l-62-132h-90v132h-62Zm62-185h96c31 0 50-17 50-43 0-28-20-44-50-44h-96v87Z" />
+  </g>
+
+  <text
+    x="460"
+    y="674"
+    text-anchor="middle"
+    fill="#018A99"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="56"
+    font-weight="600"
+    letter-spacing="0.36em"
+  >
+    SPORT SOLUTIONS
+  </text>
+</svg>
