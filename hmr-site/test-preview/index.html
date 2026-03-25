@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HMR Sport Solutions | Preview</title>
+    <meta name="description" content="Preview environment for the HMR Sport Solutions one-page website." />
+    <style>
+      :root {--ink-deep:#032829;--mist:#ebf9f9;--aqua:#5ab5b7;--teal:#01696e;--white:#fff;--max-width:1240px;--narrow-width:840px;--space-sm:.75rem;--space-md:1.25rem;--space-lg:2rem;--space-xl:3rem;--space-2xl:5rem;--font-body:'Fox Sans TRF','Avenir Next','Segoe UI',Roboto,Helvetica,Arial,sans-serif;--font-heading:'Archivo','Arial Narrow','Avenir Next Condensed',sans-serif;--border:1px solid rgba(3,40,41,.2)}
+      *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font-body);color:var(--ink-deep);background:var(--white);line-height:1.65}
+      .container{width:min(var(--max-width),calc(100% - 2.5rem));margin:0 auto}.narrow{width:min(var(--narrow-width),calc(100% - 2.5rem))}
+      .section{padding:var(--space-2xl) 0;border-top:var(--border)}.section-soft{background:var(--mist)}
+      .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(4px);border-bottom:var(--border)}
+      .header-inner{min-height:5.25rem;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:var(--space-md)}
+      .logo-box{display:flex;align-items:center;gap:.7rem;color:var(--ink-deep);text-decoration:none;font-weight:600}.logo-mark{width:34px;height:34px;border:2px solid var(--teal);border-radius:6px;display:grid;place-items:center;font-size:.8rem}
+      .desktop-nav{display:flex;flex-wrap:wrap;gap:1rem;justify-self:center}.desktop-nav a,.mobile-panel a,.site-footer nav a{color:var(--ink-deep);text-decoration:none;font-weight:500}.desktop-nav a:hover,.mobile-panel a:hover,.site-footer nav a:hover{color:var(--teal)}
+      .btn{display:inline-flex;align-items:center;justify-content:center;padding:.78rem 1.2rem;background:var(--teal);color:var(--white);border:1px solid var(--teal);text-decoration:none;font-weight:500}
+      .menu-toggle{display:none;width:2.75rem;height:2.75rem;border:var(--border);background:#fff;padding:.5rem;margin-left:auto}.menu-toggle span{display:block;height:2px;width:100%;background:var(--ink-deep);margin:.3rem 0}
+      .mobile-panel{position:fixed;top:5.25rem;right:0;height:calc(100dvh - 5.25rem);width:min(90vw,320px);background:var(--white);border-left:var(--border);padding:var(--space-lg)}.mobile-panel nav{display:grid;gap:1.1rem}
+      .hero{padding:clamp(3.5rem,8vw,7rem) 0 clamp(3rem,6vw,5rem)}.hero-grid{display:grid;gap:var(--space-xl);grid-template-columns:1.2fr 1fr;align-items:center}
+      h1,h2,h3{margin:0 0 var(--space-md);line-height:1.25}h1{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.75rem);font-weight:700;letter-spacing:.02em;max-width:18ch}h2{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:600}h3{font-size:clamp(1.1rem,1.8vw,1.35rem);font-weight:600}p{margin:0 0 var(--space-md);max-width:72ch}
+      .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-md);margin-top:var(--space-lg)}.text-link{color:var(--ink-deep)}
+      .clean-list{margin:0 0 var(--space-lg);padding-left:1.2rem}.clean-list li{margin-bottom:.75rem}
+      .experience-list{display:grid;gap:var(--space-md)}.experience-card{background:var(--white);border:var(--border);padding:var(--space-lg);display:grid;grid-template-columns:auto 1fr;gap:var(--space-lg)}.experience-number{margin:0;color:var(--teal);font-weight:600}
+      .about-grid{display:grid;gap:var(--space-xl);grid-template-columns:1.1fr 1fr}.line-art{border:var(--border);padding:1.5rem;background:var(--white);min-height:220px;display:grid;place-items:center;color:var(--teal)}
+      .contact-form{border:var(--border);background:var(--white);padding:var(--space-lg)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-md);margin-bottom:var(--space-lg)}
+      label{display:inline-block;font-weight:500;margin-bottom:.35rem}input,textarea{width:100%;border:1px solid rgba(3,40,41,.3);padding:.7rem .8rem;font:inherit}
+      .message-field{grid-column:1 / -1}.site-footer{border-top:var(--border);padding:var(--space-xl) 0}.site-footer nav{display:flex;flex-wrap:wrap;gap:1rem}
+      @media (max-width:900px){.header-inner{grid-template-columns:auto 1fr auto}.desktop-nav{display:none}.menu-toggle{display:inline-block}.hero-grid,.about-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
+      @media (max-width:640px){.header-cta{display:none}.experience-card{grid-template-columns:1fr;gap:.75rem}}
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="logo-box"><span class="logo-mark">HMR</span>HMR Sport Solutions</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle><span></span><span></span><span></span></button>
+        <nav class="desktop-nav"><a href="#when-to-bring-me-in">When to bring me in</a><a href="#what-i-do">What I do</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+        <a class="btn header-cta" href="#contact">Get in touch</a>
+      </div>
+      <div class="mobile-panel" id="mobile-nav" hidden data-mobile-panel><nav><a href="#when-to-bring-me-in">When to bring me in</a><a href="#what-i-do">What I do</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p>HMR Sport Solutions</p>
+            <h1>Independent advice when important decisions are still taking shape</h1>
+            <p>I work with organisations facing complex decisions around facilities, investment and partnerships, before commitments are made and before weak assumptions turn into harder problems.</p>
+            <div class="hero-actions"><a class="btn" href="#contact">Get in touch</a><a class="text-link" href="#experience">View experience</a></div>
+          </div>
+          <div class="line-art">Line-art placeholder</div>
+        </div>
+      </section>
+
+      <section id="when-to-bring-me-in" class="section section-soft"><div class="container narrow"><h2>When to bring me in</h2><p>Bring me in when:</p><ul class="clean-list"><li>the direction is not yet settled, but momentum is building</li><li>options are contested and stakeholders are not yet aligned</li><li>the investment case is forming, but the logic needs testing</li><li>there is pressure to move, but readiness is still unclear</li><li>the consequences of getting the next step wrong are material</li></ul><p>This is usually the point where independent advice adds most value: when the decision is live, the pressure is real, and the cost of a poor call will show up later.</p></div></section>
+
+      <section id="what-i-do" class="section"><div class="container narrow"><h2>What I actually do</h2><p>I provide independent advice when organisations need to decide what to do, why it stacks up, and whether the timing is right.</p><p>The work usually involves clarifying the real decision, testing assumptions and investment logic, working through stakeholder complexity, and assessing sequencing, readiness and risk.</p><p>I am brought in early enough to question the brief, sharpen the case, and reduce the risk of premature lock-in.</p></div></section>
+
+      <section id="experience" class="section section-soft"><div class="container"><h2>Selected experience</h2>
+      <div class="experience-list">
+      <article class="experience-card"><p class="experience-number">01</p><div><h3>Local board advisory work</h3><p>Commissioned by multiple Auckland local boards on fixed-scope sport and active recreation planning and access-related work.</p><p>The focus has been on helping decision-makers work through supply, demand, provision, investment priorities, advocacy priorities and local access questions before further commitments are made.</p></div></article>
+      <article class="experience-card"><p class="experience-number">02</p><div><h3>Public-sector systems and leasing decisions</h3><p>Led cross-council work to improve the community leasing process so peppercorn leases could be used more effectively to deliver public and community benefit.</p><p>This involved balancing policy intent, sector input, implementation realities and competing priorities inside local government.</p></div></article>
+      </div></div></section>
+
+      <section id="about" class="section"><div class="container narrow about-grid"><div><h2>About</h2><p>My experience spans Sport New Zealand, Auckland Council, Tātaki Auckland Unlimited, the University of Auckland and Aktive.</p><p>Across those environments, the pattern has been consistent: important decisions are often made while assumptions are still weak, stakeholders are not fully aligned, and pressure to progress is stronger than the case for doing so.</p><p>That is usually where I add most value.</p><p>I now work independently, helping organisations make better decisions earlier, before commitments harden and before avoidable complexity becomes someone else’s problem.</p></div><div class="line-art">Line-art placeholder</div></div></section>
+
+      <section id="contact" class="section section-soft"><div class="container narrow"><h2>Contact</h2><p>If you’re working through a decision like this, feel free to get in touch.</p>
+      <form class="contact-form"><div class="form-grid"><div><label>Name</label><input/></div><div><label>Email</label><input/></div><div><label>Organisation</label><input/></div><div class="message-field"><label>Message</label><textarea rows="6"></textarea></div></div><button class="btn" type="button">Send enquiry</button></form>
+      <p style="margin-top:2rem">Not a fan of forms? Email me directly at <a href="mailto:hamish@hmrsportsolutions.co">hamish@hmrsportsolutions.co</a>.</p>
+      </div></section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><p>HMR Sport Solutions</p><p>© 2026 HMR Sport Solutions. All rights reserved.</p></div></footer>
+
+    <script>
+      const toggle = document.querySelector('[data-menu-toggle]');
+      const panel = document.querySelector('[data-mobile-panel]');
+      if (toggle && panel) {
+        panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          panel.hidden = true;
+        }));
+        toggle.addEventListener('click', () => {
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          panel.hidden = open;
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" fill="none" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">HMR Sport Solutions</title>
+  <desc id="logoDesc">Wordmark for HMR Sport Solutions</desc>
+  <rect x="1" y="1" width="70" height="70" rx="10" stroke="#01696E" stroke-width="2"/>
+  <path d="M16 53V19h6.4l13.7 20.8V19h6.1v34h-6.2L22 32v21h-6Z" fill="#032829"/>
+  <path d="M47 19h6v34h-6z" fill="#5AB5B7"/>
+  <text x="88" y="34" fill="#032829" font-family="'Arial', sans-serif" font-size="22" font-weight="600" letter-spacing="0.01em">HMR Sport</text>
+  <text x="88" y="56" fill="#01696E" font-family="'Arial', sans-serif" font-size="18" font-weight="500" letter-spacing="0.01em">Solutions</text>
+</svg>

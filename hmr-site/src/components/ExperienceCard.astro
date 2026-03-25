@@ -1,0 +1,19 @@
+---
+interface Props {
+  number: number;
+  title: string;
+  bodyOne: string;
+  bodyTwo: string;
+}
+
+const { number, title, bodyOne, bodyTwo } = Astro.props;
+---
+
+<article class="experience-card">
+  <p class="experience-number">{String(number).padStart(2, '0')}</p>
+  <div>
+    <h3>{title}</h3>
+    <p>{bodyOne}</p>
+    <p>{bodyTwo}</p>
+  </div>
+</article>
