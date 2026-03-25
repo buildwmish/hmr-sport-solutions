@@ -1,0 +1,22 @@
+:root {
+  --ink-deep: #032829;
+  --mist: #ebf9f9;
+  --aqua: #5ab5b7;
+  --teal: #01696e;
+  --white: #ffffff;
+
+  --max-width: 1240px;
+  --narrow-width: 840px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+
+  --font-body: 'Fox Sans TRF', 'Avenir Next', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Archivo', 'Arial Narrow', 'Avenir Next Condensed', sans-serif;
+
+  --border: 1px solid color-mix(in srgb, var(--ink-deep) 20%, transparent);
+}
