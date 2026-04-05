@@ -1,136 +1,361 @@
 ---
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import SectionIntro from '../components/SectionIntro.astro';
-import ExperienceCard from '../components/ExperienceCard.astro';
-import ContactForm from '../components/ContactForm.astro';
-import Footer from '../components/Footer.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import lineArtTwo from '../assets/img/line-art-2.svg';
 ---
 
-<BaseLayout>
-  <Header />
-  <main id="main-content">
-    <Hero />
-
-    <section id="when-to-bring-me-in" class="section section-soft">
-      <div class="container narrow">
-        <SectionIntro heading="When to bring me in" intro="Bring me in when:" />
-        <ul class="clean-list">
-          <li>the direction is not yet settled, but momentum is building</li>
-          <li>options are contested and stakeholders are not yet aligned</li>
-          <li>the investment case is forming, but the logic needs testing</li>
-          <li>there is pressure to move, but readiness is still unclear</li>
-          <li>the consequences of getting the next step wrong are material</li>
-        </ul>
-        <p>
-          This is usually the point where independent advice adds most value: when the decision is live, the pressure is
-          real, and the cost of a poor call will show up later.
-        </p>
-      </div>
-    </section>
-
-    <section id="what-i-do" class="section">
-      <div class="container narrow">
-        <SectionIntro heading="What I actually do" />
-        <div class="prose">
-          <p>
-            I provide independent advice when organisations need to decide what to do, why it stacks up, and whether the
-            timing is right.
-          </p>
-          <p>
-            The work usually involves clarifying the real decision, testing assumptions and investment logic, working
-            through stakeholder complexity, and assessing sequencing, readiness and risk.
-          </p>
-          <p>
-            I am brought in early enough to question the brief, sharpen the case, and reduce the risk of premature lock-in.
-          </p>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HMR advisor | Independent advice for senior decision-makers</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script is:inline>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'surface-container-highest': '#d7e5e5',
+              'surface-variant': '#d7e5e5',
+              'surface-container-lowest': '#ffffff',
+              'error-container': '#ffdad6',
+              'on-secondary-fixed': '#002021',
+              'surface-tint': '#01696e',
+              'on-tertiary': '#ffffff',
+              'inverse-on-surface': '#e5f3f3',
+              'on-tertiary-container': '#8de7e9',
+              'on-secondary': '#ffffff',
+              'on-background': '#111e1e',
+              'surface-dim': '#cfdddd',
+              'surface-container': '#e3f1f1',
+              'on-primary-fixed-variant': '#004f53',
+              'on-surface-variant': '#3e4949',
+              'primary-fixed-dim': '#85d3d8',
+              'inverse-primary': '#85d3d8',
+              'tertiary-container': '#00696b',
+              'on-primary': '#ffffff',
+              'outline-variant': '#bec9c9',
+              outline: '#6f797a',
+              'surface-container-low': '#e8f6f6',
+              secondary: '#436465',
+              'on-tertiary-fixed-variant': '#004f51',
+              'on-secondary-container': '#486869',
+              surface: '#eefcfc',
+              error: '#ba1a1a',
+              'surface-bright': '#eefcfc',
+              'primary-fixed': '#a1f0f5',
+              'on-tertiary-fixed': '#002020',
+              'on-error-container': '#93000a',
+              'tertiary-fixed': '#98f1f3',
+              'on-surface': '#111e1e',
+              'secondary-fixed': '#c6e9ea',
+              tertiary: '#004f51',
+              'secondary-fixed-dim': '#aacdce',
+              'primary-container': '#01696e',
+              'on-primary-container': '#97e5eb',
+              background: '#eefcfc',
+              'on-error': '#ffffff',
+              'surface-container-high': '#ddebeb',
+              primary: '#004f53',
+              'on-secondary-fixed-variant': '#2b4c4d',
+              'on-primary-fixed': '#002022',
+              'inverse-surface': '#263333',
+              'secondary-container': '#c3e6e7',
+              'tertiary-fixed-dim': '#7bd5d7'
+            },
+            fontFamily: {
+              headline: ['Archivo', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              label: ['Inter', 'sans-serif']
+            },
+            borderRadius: { DEFAULT: '0.125rem', lg: '0.25rem', xl: '0.5rem', full: '0.75rem' }
+          }
+        }
+      };
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; background-color: #eefcfc; color: #111e1e; }
+      .font-archivo { font-family: 'Archivo', sans-serif; }
+      .schematic-grid {
+        background-image: linear-gradient(#bec9c9 0.5px, transparent 0.5px), linear-gradient(90deg, #bec9c9 0.5px, transparent 0.5px);
+        background-size: 40px 40px;
+      }
+      .portrait-editorial {
+        filter: grayscale(100%) contrast(1.03) brightness(1.01);
+        transform: scale(1.015);
+      }
+      .portrait-editorial:hover {
+        filter: grayscale(55%) contrast(1.03) brightness(1.01);
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface antialiased">
+    <header class="fixed top-0 w-full z-50 bg-[#eefcfc]/80 dark:bg-[#032829]/80 backdrop-blur-md">
+      <nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+        <div class="text-xl font-black uppercase tracking-tighter text-[#032829] dark:text-[#eefcfc]">
+          <img alt="HMR Sport Solutions" class="h-12 w-auto object-contain" src="/assets/logo-horizontal-black.png" />
         </div>
-      </div>
-    </section>
 
-    <section id="experience" class="section section-soft">
-      <div class="container">
-        <SectionIntro heading="Selected experience" />
-        <div class="experience-list">
-          <ExperienceCard
-            number={1}
-            title="Local board advisory work"
-            bodyOne="Commissioned by multiple Auckland local boards on fixed-scope sport and active recreation planning and access-related work."
-            bodyTwo="The focus has been on helping decision-makers work through supply, demand, provision, investment priorities, advocacy priorities and local access questions before further commitments are made."
-          />
-          <ExperienceCard
-            number={2}
-            title="Public-sector systems and leasing decisions"
-            bodyOne="Led cross-council work to improve the community leasing process so peppercorn leases could be used more effectively to deliver public and community benefit."
-            bodyTwo="This involved balancing policy intent, sector input, implementation realities and competing priorities inside local government."
-          />
-          <ExperienceCard
-            number={3}
-            title="University recreation facility readiness"
-            bodyOne="Worked within a major university recreation environment during facility transition, operational setup and business unit growth."
-            bodyTwo="That created direct visibility into how early planning, design and investment decisions translate into operating reality once a facility opens."
-          />
-          <ExperienceCard
-            number={4}
-            title="National sport and system context"
-            bodyOne="Worked across Sport New Zealand in roles spanning sport development, special projects and the ongoing development of the Balance is Better platform."
-            bodyTwo="This provided strong exposure to how direction is formed within institutions, how priorities are interpreted across functions, and how national thinking is carried into the sector."
-          />
-          <ExperienceCard
-            number={5}
-            title="Major event readiness"
-            bodyOne="Worked within the FIFA Women’s World Cup host city programme across training venue settings."
-            bodyTwo="This meant operating in a setting where sequencing, coordination, readiness and public scrutiny all mattered under fixed deadlines."
-          />
-          <ExperienceCard
-            number={6}
-            title="Regional funding and programme scale"
-            bodyOne="Led regional KiwiSport investment and helped scale the Good Sports programme from pilot to nationally recognised programme."
-            bodyTwo="This built practical experience in how funding settings, programme design and stakeholder incentives shape behaviour and outcomes across a wider system. Good Sports later received national recognition for its impact."
-          />
+        <div class="hidden md:flex items-center gap-8">
+          <a class="text-[#111e1e] dark:text-[#eefcfc] opacity-80 hover:opacity-100 hover:text-[#01696E] transition-all duration-300 body-sm font-normal tracking-wide" href="#threshold">When to bring me in</a>
+          <a class="text-[#111e1e] dark:text-[#eefcfc] opacity-80 hover:opacity-100 hover:text-[#01696E] transition-all duration-300 body-sm font-normal tracking-wide" href="#advisory">How I help</a>
+          <a class="text-[#111e1e] dark:text-[#eefcfc] opacity-80 hover:opacity-100 hover:text-[#01696E] transition-all duration-300 body-sm font-normal tracking-wide" href="#evidence">Experience</a>
+          <a class="text-[#111e1e] dark:text-[#eefcfc] opacity-80 hover:opacity-100 hover:text-[#01696E] transition-all duration-300 body-sm font-normal tracking-wide" href="#principal">About</a>
+          <a class="text-[#111e1e] dark:text-[#eefcfc] opacity-80 hover:opacity-100 hover:text-[#01696E] transition-all duration-300 body-sm font-normal tracking-wide" href="#dialogue">Contact</a>
         </div>
-      </div>
-    </section>
 
-    <section id="about" class="section">
-      <div class="container narrow about-grid">
-        <div>
-          <SectionIntro heading="About" />
-          <div class="prose">
-            <p>
-              My experience spans Sport New Zealand, Auckland Council, Tātaki Auckland Unlimited, the University of
-              Auckland and Aktive.
+        <a class="bg-primary-container text-on-primary px-6 py-2.5 rounded-sm text-sm font-semibold tracking-tight hover:opacity-90 active:scale-[0.98] transition-all" href="#dialogue">
+          Get in touch
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="relative min-h-screen flex items-center pt-24 px-12 overflow-hidden bg-surface-container-lowest">
+        <div class="absolute inset-0 schematic-grid opacity-[0.03] pointer-events-none"></div>
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none">
+          <svg fill="none" height="600" viewBox="0 0 600 600" width="600" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="300" r="199.5" stroke="#01696E"></circle>
+            <circle cx="400" cy="300" r="199.5" stroke="#01696E"></circle>
+          </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full relative z-10">
+          <div class="max-w-5xl">
+            <h1 class="font-archivo text-6xl md:text-8xl font-black tracking-tight leading-[0.95] text-primary mb-10">
+              Independent advice when important decisions are still taking shape
+            </h1>
+            <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed mb-12">
+              I work with organisations across sport, recreation, and public-sector settings on complex decisions involving facilities, investment, partnerships, and system response, before commitments are made and before weak assumptions turn into harder problems.
             </p>
-            <p>
-              Across those environments, the pattern has been consistent: important decisions are often made while
-              assumptions are still weak, stakeholders are not fully aligned, and pressure to progress is stronger than the
-              case for doing so.
-            </p>
-            <p>That is usually where I add most value.</p>
-            <p>
-              I now work independently, helping organisations make better decisions earlier, before commitments harden and
-              before avoidable complexity becomes someone else’s problem.
+            <div class="flex flex-wrap gap-6">
+              <a class="bg-primary-container text-on-primary px-10 py-4 rounded-sm font-bold tracking-tight hover:opacity-90 transition-all" href="#dialogue">
+                Get in touch
+              </a>
+              <a class="border border-outline-variant/30 text-on-surface px-10 py-4 rounded-sm font-bold tracking-tight hover:bg-surface-container transition-all" href="#evidence">
+                View experience
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-12 bg-surface-container-low border-none" id="threshold">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div class="md:col-span-4">
+            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">01 / Timing</span>
+            <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">When to bring me in</h2>
+          </div>
+          <div class="md:col-span-8">
+            <ul class="space-y-6 mb-16">
+              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1" style='font-variation-settings: "FILL" 0;'>arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">direction is not yet settled</span></li>
+              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1" style='font-variation-settings: "FILL" 0;'>arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">options are contested</span></li>
+              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1" style='font-variation-settings: "FILL" 0;'>arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">investment case is forming</span></li>
+              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1" style='font-variation-settings: "FILL" 0;'>arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">pressure to move, but readiness is unclear</span></li>
+              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1" style='font-variation-settings: "FILL" 0;'>arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">consequences of getting the next step wrong are material</span></li>
+            </ul>
+            <p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+              This is usually the point where independent advice adds most value, when the direction is still taking shape, the pressure to move is real, and the quality of the next step matters.
             </p>
           </div>
         </div>
-        <div class="about-art" aria-hidden="true">
-          <img src={lineArtTwo.src} alt="" loading="lazy" decoding="async" />
+      </section>
+
+      <section class="py-32 px-12 bg-surface" id="advisory">
+        <div class="max-w-7xl mx-auto">
+          <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">02 / Role</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div>
+              <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">How I help</h2>
+            </div>
+            <div class="font-body text-xl text-on-surface space-y-8 leading-relaxed">
+              <p>I provide independent advice when organisations need to decide what to do, why it stacks up, and whether the timing is right.</p>
+              <p>The work usually involves clarifying the real decision, testing assumptions and investment logic, working through stakeholder complexity, and assessing sequencing, readiness, and risk.</p>
+              <p>I am usually brought in early enough to question the brief, sharpen the case, and reduce the risk of premature lock-in.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-12 bg-surface-dim" id="evidence">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-8">
+            <div>
+              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">03 / Experience</span>
+              <h2 class="font-archivo text-4xl font-black text-on-surface">Selected experience</h2>
+            </div>
+            <p class="text-on-surface-variant max-w-md">Experience across sport, recreation, local and central government, and decision-making around facilities, investment, access, and systems.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-outline-variant/10">
+            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="max-w-2xl">
+                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">PLANNING &amp; INVESTMENT</span>
+                <h3 class="text-2xl font-bold mb-4">Local authority planning and investment</h3>
+                <p class="text-on-surface-variant">Worked with Auckland local boards on sport and active recreation planning, access, and investment-related decisions.</p>
+              </div>
+            </div>
+
+            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="max-w-2xl">
+                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">LEASING</span>
+                <h3 class="text-2xl font-bold mb-4">Public-sector systems and leasing</h3>
+                <p class="text-on-surface-variant">Led cross-council work to improve how community leasing decisions support public and community benefit.</p>
+              </div>
+            </div>
+
+            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="max-w-2xl">
+                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">FACILITY DESIGN &amp; OPERATIONS</span>
+                <h3 class="text-2xl font-bold mb-4">Hiwa – University of Auckland Recreation Centre</h3>
+                <p class="text-on-surface-variant">Worked across design, facility transition, operational setup, and growth, with direct visibility into how early decisions carry through into operating reality.</p>
+              </div>
+            </div>
+
+            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="max-w-2xl">
+                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">SPORT SYSTEMS</span>
+                <h3 class="text-2xl font-bold mb-4">National sport and system context</h3>
+                <p class="text-on-surface-variant">Worked across Sport New Zealand in roles spanning sport development, system-level work, and management of the Balance is Better digital platform, with direct exposure to how strategy is translated into sector-facing tools and communication.</p>
+              </div>
+            </div>
+
+            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="max-w-2xl">
+                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">READINESS</span>
+                <h3 class="text-2xl font-bold mb-4">Major-event readiness</h3>
+                <p class="text-on-surface-variant">Worked within the FIFA Women’s World Cup host city programme across training venue settings.</p>
+              </div>
+            </div>
+
+            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="max-w-2xl">
+                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">FUNDING</span>
+                <h3 class="text-2xl font-bold mb-4">Funding and investment administration</h3>
+                <p class="text-on-surface-variant">Managed a large regional KiwiSport funding portfolio, with direct responsibility for how investment decisions were administered.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-12 bg-surface" id="principal">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div class="relative aspect-[4/5] bg-surface-dim overflow-hidden">
+            <img alt="Portrait of Hamish Rogers" class="portrait-editorial object-cover w-full h-full transition-all duration-700" src="/assets/hamish-portrait.jpg" />
+            <div class="absolute inset-0 border-[20px] border-surface"></div>
+          </div>
+
+          <div>
+            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">04 / Principal</span>
+            <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">About Hamish Rogers</h2>
+            <div class="font-body text-lg text-on-surface-variant space-y-6 leading-relaxed">
+              <p>My experience has shown me that many important decisions are made before the real problem is fully clear and before the underlying logic has been properly tested.</p>
+              <p>Having worked across sport, recreation, facilities, funding, and public-sector environments, I understand how ideas take shape inside organisations, how competing pressures influence direction, and where weak assumptions can harden into more difficult problems later.</p>
+              <p>My role is to help bring more clarity to the decision in front of you, test the logic behind it, and improve the quality of the next step before commitments settle in the wrong place.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-12 bg-surface-container-low" id="dialogue">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5">
+              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">05 / Contact</span>
+              <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">Get in touch</h2>
+              <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                If you are working through a decision like this, get in touch.
+              </p>
+              <div class="p-6 bg-surface-container-lowest rounded-sm">
+                <p class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Direct contact</p>
+                <a class="text-xl font-bold hover:text-primary transition-colors" href="mailto:hamish@hmrsportsolutions.co">hamish@hmrsportsolutions.co</a>
+              </div>
+            </div>
+
+            <div class="md:col-span-7">
+              <form class="space-y-8 bg-surface-container-lowest p-10 shadow-sm" id="contact-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-1 block" for="name">Name</label>
+                    <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface" id="name" name="name" placeholder="John Doe" type="text" required />
+                  </div>
+                  <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-1 block" for="organisation">Organisation</label>
+                    <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface" id="organisation" name="organisation" placeholder="Public Sector Org" type="text" />
+                  </div>
+                </div>
+
+                <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
+                  <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-1 block" for="email">Email</label>
+                  <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface" id="email" name="email" placeholder="email@organisation.gov.nz" type="email" required />
+                </div>
+
+                <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
+                  <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-1 block" for="message">How can I help?</label>
+                  <textarea class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface resize-none" id="message" name="message" placeholder="How can I help?" rows="3" required></textarea>
+                </div>
+
+                <button class="bg-primary-container text-on-primary w-full md:w-auto px-12 py-4 font-bold tracking-tight hover:opacity-90 transition-all" type="submit">
+                  Send enquiry
+                </button>
+                <p class="text-sm hidden" id="contact-status"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#e8f6f6] dark:bg-[#021d1e] w-full py-20 px-12">
+      <div class="flex flex-col md:flex-row justify-between items-end w-full max-w-screen-2xl mx-auto gap-8">
+        <div class="space-y-4">
+          <div class="text-lg font-black text-[#032829] dark:text-[#eefcfc] uppercase tracking-tighter">
+            HMR Sport Solutions
+          </div>
+          <p class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60">
+            HMR Sport Solutions © 2026
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="#">LinkedIn</a>
+          <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="#">Privacy Policy</a>
+          <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="#">Terms</a>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <section id="contact" class="section section-soft">
-      <div class="container narrow">
-        <SectionIntro heading="Contact" intro="If you’re working through a decision like this, feel free to get in touch." />
-        <ContactForm />
-        <p class="contact-alt">
-          Not a fan of forms? Email me directly at
-          <a href="mailto:hamish@hmrsportsolutions.co">hamish@hmrsportsolutions.co</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-  <Footer />
-</BaseLayout>
+    <script is:inline>
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('contact-status');
+
+      form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch('/.netlify/functions/contact-submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) throw new Error('Failed to submit enquiry');
+
+          form.reset();
+          status?.classList.remove('hidden', 'text-red-700');
+          status?.classList.add('text-green-700');
+          if (status) status.textContent = 'Thanks, your enquiry has been sent.';
+        } catch {
+          status?.classList.remove('hidden', 'text-green-700');
+          status?.classList.add('text-red-700');
+          if (status) status.textContent = 'Sorry, there was an issue sending your enquiry. Please email directly.';
+        }
+      });
+    </script>
+  </body>
+</html>
