@@ -13,6 +13,11 @@ export default {
         "surface-container-low": "#e8f6f6",
         "surface-container-lowest": "#ffffff",
         "outline-variant": "#bec9c9",
+        "surface-dim": "#cfdddd",
+"surface-container": "#e3f1f1",
+"tertiary": "#004f51",
+"error": "#ba1a1a",
+"on-primary-container": "#97e5eb",
       },
       fontFamily: {
         "archivo": ["Archivo", "sans-serif"],
