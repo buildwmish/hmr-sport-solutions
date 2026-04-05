@@ -1,5 +1,5 @@
 ---
-// Astro Component Script area - you can add imports here if needed
+// HMR Sport Solutions - Astro Conversion v2
 ---
 
 <html class="scroll-smooth" lang="en">
@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-surface text-on-surface antialiased">
-    <header class="fixed top-0 w-full z-50 bg-[#eefcfc]/80 dark:bg-[#032829]/80 backdrop-blur-md">
+    <header class="fixed top-0 w-full z-50 bg-[#eefcfc]/80 dark:bg-[#032829]/80 backdrop-blur-md border-b border-outline-variant/10">
       <nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
         <div class="text-xl font-black uppercase tracking-tighter text-[#032829] dark:text-[#eefcfc]">
-          <img alt="HMR Sport Solutions" class="h-12 w-auto object-contain" src="/assets/logo-horizontal-black.png" />
+          <img alt="HMR Sport Solutions Logo" class="h-12 w-auto object-contain" src="/assets/logo-horizontal-black.png" />
         </div>
 
         <div class="hidden md:flex items-center gap-8">
@@ -36,7 +36,7 @@
 
     <main>
       <section class="relative min-h-screen flex items-center pt-24 px-12 overflow-hidden bg-surface-container-lowest">
-        <div class="absolute inset-0 schematic-grid opacity-[0.03] pointer-events-none"></div>
+        <div class="absolute inset-0 schematic-grid opacity-[0.04] pointer-events-none"></div>
         <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none">
           <svg fill="none" height="600" viewBox="0 0 600 600" width="600" xmlns="http://www.w3.org/2000/svg">
             <circle cx="200" cy="300" r="199.5" stroke="#01696E"></circle>
@@ -67,16 +67,17 @@
       <section class="py-32 px-12 bg-surface-container-low border-none" id="threshold">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
           <div class="md:col-span-4">
-            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">01 / Timing</span>
+            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">01 / Timing</span>
             <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">When to bring me in</h2>
           </div>
           <div class="md:col-span-8">
             <ul class="space-y-6 mb-16">
-              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1">arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">direction is not yet settled</span></li>
-              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1">arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">options are contested</span></li>
-              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1">arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">investment case is forming</span></li>
-              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1">arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">pressure to move, but readiness is unclear</span></li>
-              <li class="flex items-start gap-6 group"><span class="material-symbols-outlined text-primary mt-1">arrow_right_alt</span><span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">consequences of getting the next step wrong are material</span></li>
+              {['direction is not yet settled', 'options are contested', 'investment case is forming', 'pressure to move, but readiness is unclear', 'consequences of getting the next step wrong are material'].map((text) => (
+                <li class="flex items-start gap-6 group">
+                  <span class="material-symbols-outlined text-primary mt-1" aria-hidden="true">arrow_right_alt</span>
+                  <span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">{text}</span>
+                </li>
+              ))}
             </ul>
             <p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
               This is usually the point where independent advice adds most value, when the direction is still taking shape, the pressure to move is real, and the quality of the next step matters.
@@ -87,7 +88,7 @@
 
       <section class="py-32 px-12 bg-surface" id="advisory">
         <div class="max-w-7xl mx-auto">
-          <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">02 / Role</span>
+          <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">02 / Role</span>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
             <div>
               <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">How I help</h2>
@@ -105,73 +106,42 @@
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-8">
             <div>
-              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">03 / Experience</span>
+              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">03 / Experience</span>
               <h2 class="font-archivo text-4xl font-black text-on-surface">Selected experience</h2>
             </div>
             <p class="text-on-surface-variant max-w-md">Experience across sport, recreation, local and central government, and decision-making around facilities, investment, access, and systems.</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-outline-variant/10">
-            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
-              <div class="max-w-2xl">
-                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">PLANNING &amp; INVESTMENT</span>
-                <h3 class="text-2xl font-bold mb-4">Local authority planning and investment</h3>
-                <p class="text-on-surface-variant">Worked with Auckland local boards on sport and active recreation planning, access, and investment-related decisions.</p>
+            {[
+              { cat: "PLANNING & INVESTMENT", title: "Local authority planning and investment", desc: "Worked with Auckland local boards on sport and active recreation planning, access, and investment-related decisions." },
+              { cat: "LEASING", title: "Public-sector systems and leasing", desc: "Led cross-council work to improve how community leasing decisions support public and community benefit." },
+              { cat: "FACILITY DESIGN & OPERATIONS", title: "Hiwa – University of Auckland Recreation Centre", desc: "Worked across design, facility transition, operational setup, and growth, with direct visibility into how early decisions carry through into operating reality." },
+              { cat: "SPORT SYSTEMS", title: "National sport and system context", desc: "Worked across Sport New Zealand in roles spanning sport development, system-level work, and management of the Balance is Better digital platform." },
+              { cat: "READINESS", title: "Major-event readiness", desc: "Worked within the FIFA Women’s World Cup host city programme across training venue settings." },
+              { cat: "FUNDING", title: "Funding and investment administration", desc: "Managed a large regional KiwiSport funding portfolio, with direct responsibility for how investment decisions were administered." }
+            ].map((item) => (
+              <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+                <div class="max-w-2xl">
+                  <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">{item.cat}</span>
+                  <h3 class="text-2xl font-bold mb-4">{item.title}</h3>
+                  <p class="text-on-surface-variant">{item.desc}</p>
+                </div>
               </div>
-            </div>
-
-            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
-              <div class="max-w-2xl">
-                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">LEASING</span>
-                <h3 class="text-2xl font-bold mb-4">Public-sector systems and leasing</h3>
-                <p class="text-on-surface-variant">Led cross-council work to improve how community leasing decisions support public and community benefit.</p>
-              </div>
-            </div>
-
-            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
-              <div class="max-w-2xl">
-                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">FACILITY DESIGN &amp; OPERATIONS</span>
-                <h3 class="text-2xl font-bold mb-4">Hiwa – University of Auckland Recreation Centre</h3>
-                <p class="text-on-surface-variant">Worked across design, facility transition, operational setup, and growth, with direct visibility into how early decisions carry through into operating reality.</p>
-              </div>
-            </div>
-
-            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
-              <div class="max-w-2xl">
-                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">SPORT SYSTEMS</span>
-                <h3 class="text-2xl font-bold mb-4">National sport and system context</h3>
-                <p class="text-on-surface-variant">Worked across Sport New Zealand in roles spanning sport development, system-level work, and management of the Balance is Better digital platform, with direct exposure to how strategy is translated into sector-facing tools and communication.</p>
-              </div>
-            </div>
-
-            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
-              <div class="max-w-2xl">
-                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">READINESS</span>
-                <h3 class="text-2xl font-bold mb-4">Major-event readiness</h3>
-                <p class="text-on-surface-variant">Worked within the FIFA Women’s World Cup host city programme across training venue settings.</p>
-              </div>
-            </div>
-
-            <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
-              <div class="max-w-2xl">
-                <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">FUNDING</span>
-                <h3 class="text-2xl font-bold mb-4">Funding and investment administration</h3>
-                <p class="text-on-surface-variant">Managed a large regional KiwiSport funding portfolio, with direct responsibility for how investment decisions were administered.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section class="py-32 px-12 bg-surface" id="principal">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div class="relative aspect-[4/5] bg-surface-dim overflow-hidden">
+          <div class="relative aspect-[4/5] bg-surface-dim overflow-hidden group">
             <img alt="Portrait of Hamish Rogers" class="portrait-editorial object-cover w-full h-full transition-all duration-700" src="/assets/hamish-portrait.jpg" />
-            <div class="absolute inset-0 border-[20px] border-surface"></div>
+            <div class="absolute inset-0 border-[20px] border-surface pointer-events-none"></div>
           </div>
 
           <div>
-            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">04 / Principal</span>
+            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">04 / Principal</span>
             <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">About Hamish Rogers</h2>
             <div class="font-body text-lg text-on-surface-variant space-y-6 leading-relaxed">
               <p>My experience has shown me that many important decisions are made before the real problem is fully clear and before the underlying logic has been properly tested.</p>
@@ -186,7 +156,7 @@
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-5">
-              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4">05 / Contact</span>
+              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">05 / Contact</span>
               <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">Get in touch</h2>
               <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
                 If you are working through a decision like this, get in touch.
@@ -217,13 +187,13 @@
 
                 <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
                   <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-1 block" for="message">How can I help?</label>
-                  <textarea class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface resize-none" id="message" name="message" placeholder="How can I help?" rows="3" required></textarea>
+                  <textarea class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface resize-none" id="message" name="message" placeholder="Briefly describe your project..." rows="3" required></textarea>
                 </div>
 
                 <button class="bg-primary-container text-on-primary w-full md:w-auto px-12 py-4 font-bold tracking-tight hover:opacity-90 transition-all" type="submit">
                   Send enquiry
                 </button>
-                <p class="text-sm hidden" id="contact-status"></p>
+                <p class="text-sm mt-4 hidden" id="contact-status"></p>
               </form>
             </div>
           </div>
@@ -231,7 +201,7 @@
       </section>
     </main>
 
-    <footer class="bg-[#e8f6f6] dark:bg-[#021d1e] w-full py-20 px-12">
+    <footer class="bg-[#e8f6f6] dark:bg-[#021d1e] w-full py-20 px-12 border-t border-outline-variant/10">
       <div class="flex flex-col md:flex-row justify-between items-end w-full max-w-screen-2xl mx-auto gap-8">
         <div class="space-y-4">
           <div class="text-lg font-black text-[#032829] dark:text-[#eefcfc] uppercase tracking-tighter">
@@ -242,7 +212,7 @@
           </p>
         </div>
         <div class="flex gap-8">
-          <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="#">LinkedIn</a>
+          <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="https://linkedin.com">LinkedIn</a>
           <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="#">Privacy Policy</a>
           <a class="body-sm font-normal text-[#111e1e] dark:text-[#eefcfc] tracking-wide opacity-60 hover:opacity-100 hover:text-[#01696E] underline decoration-px underline-offset-4 transition-all" href="#">Terms</a>
         </div>
@@ -250,24 +220,34 @@
     </footer>
 
     <style is:global>
-      /* Restore original CSS styles via Astro's global style tag */
-      body { font-family: 'Inter', sans-serif; background-color: #eefcfc; color: #111e1e; }
+      /* Base Theme Styles */
+      body { 
+        font-family: 'Inter', sans-serif; 
+        background-color: #eefcfc; 
+        color: #111e1e; 
+      }
       .font-archivo { font-family: 'Archivo', sans-serif; }
+      
+      /* Decorative Grid */
       .schematic-grid {
-        background-image: linear-gradient(#bec9c9 0.5px, transparent 0.5px), linear-gradient(90deg, #bec9c9 0.5px, transparent 0.5px);
+        background-image: linear-gradient(#bec9c9 0.5px, transparent 0.5px), 
+                          linear-gradient(90deg, #bec9c9 0.5px, transparent 0.5px);
         background-size: 40px 40px;
       }
+      
+      /* Image Filtering */
       .portrait-editorial {
-        filter: grayscale(100%) contrast(1.03) brightness(1.01);
-        transform: scale(1.015);
+        filter: grayscale(100%) contrast(1.05) brightness(1.02);
+        transform: scale(1);
+        transition: filter 0.5s ease, transform 0.5s ease;
       }
       .portrait-editorial:hover {
-        filter: grayscale(55%) contrast(1.03) brightness(1.01);
+        filter: grayscale(40%) contrast(1.05) brightness(1.02);
+        transform: scale(1.02);
       }
     </style>
 
     <script is:inline>
-      // Form handling script
       const form = document.getElementById('contact-form');
       const status = document.getElementById('contact-status');
 
@@ -276,6 +256,9 @@
         const formData = new FormData(form);
         const payload = Object.fromEntries(formData.entries());
 
+        status.textContent = 'Sending...';
+        status.classList.remove('hidden', 'text-red-700', 'text-green-700');
+
         try {
           const response = await fetch('/.netlify/functions/contact-submit', {
             method: 'POST',
@@ -283,16 +266,14 @@
             body: JSON.stringify(payload)
           });
 
-          if (!response.ok) throw new Error('Failed to submit enquiry');
+          if (!response.ok) throw new Error('Submission failed');
 
           form.reset();
-          status?.classList.remove('hidden', 'text-red-700');
-          status?.classList.add('text-green-700');
-          if (status) status.textContent = 'Thanks, your enquiry has been sent.';
-        } catch {
-          status?.classList.remove('hidden', 'text-green-700');
-          status?.classList.add('text-red-700');
-          if (status) status.textContent = 'Sorry, there was an issue sending your enquiry. Please email directly.';
+          status.classList.add('text-green-700');
+          status.textContent = 'Thanks, your enquiry has been sent.';
+        } catch (err) {
+          status.classList.add('text-red-700');
+          status.textContent = 'Issue sending enquiry. Please email hamish@hmrsportsolutions.co directly.';
         }
       });
     </script>
