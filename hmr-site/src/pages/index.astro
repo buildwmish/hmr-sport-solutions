@@ -40,7 +40,7 @@
         </button>
       </nav>
 
-      <div id="mobile-menu" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 px-6 pb-8 gap-8">
+      <div id="mobile-menu" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 px-6 pb-8 gap-8 bg-[#eefcfc] dark:bg-[#032829]">
         <nav class="flex flex-col gap-6 text-2xl font-bold tracking-tight">
           <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#threshold">When to bring me in</a>
           <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#advisory">How I help</a>
@@ -283,16 +283,6 @@
       }
       .hide-scrollbar::-webkit-scrollbar {
         display: none; /* Chrome, Safari and Opera */
-      }
-      
-      /* Bulletproof Mobile Menu Background */
-      #mobile-menu {
-        background-color: #eefcfc !important;
-      }
-      @media (prefers-color-scheme: dark) {
-        #mobile-menu {
-          background-color: #032829 !important;
-        }
       }
     </style>
 
