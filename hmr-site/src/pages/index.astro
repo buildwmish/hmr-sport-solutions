@@ -16,9 +16,9 @@
   </head>
   <body class="bg-surface text-on-surface antialiased">
     <header class="fixed top-0 w-full z-50 bg-[#eefcfc]/80 dark:bg-[#032829]/80 backdrop-blur-md border-b border-outline-variant/10">
-      <nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+      <nav class="flex justify-between items-center w-full px-4 sm:px-6 md:px-12 py-3 md:py-6 max-w-screen-2xl mx-auto">
         <div class="text-xl font-black uppercase tracking-tighter text-[#032829] dark:text-[#eefcfc]">
-          <img alt="HMR Sport Solutions Logo" class="h-12 w-auto object-contain" src="/assets/logo-horizontal-black.png" />
+          <img alt="HMR Sport Solutions Logo" class="h-8 sm:h-9 md:h-12 w-auto object-contain" src="/assets/logo-horizontal-black.png" />
         </div>
 
         <div class="hidden md:flex items-center gap-8">
@@ -29,16 +29,16 @@
           <a class="text-[#111e1e] dark:text-[#eefcfc] opacity-80 hover:opacity-100 hover:text-[#01696E] transition-all duration-300 body-sm font-normal tracking-wide" href="#dialogue">Contact</a>
         </div>
 
-        <a class="bg-primary-container text-on-primary px-6 py-2.5 rounded-sm text-sm font-semibold tracking-tight hover:opacity-90 active:scale-[0.98] transition-all" href="#dialogue">
+        <a class="bg-primary-container text-on-primary px-4 sm:px-6 py-2 sm:py-2.5 rounded-sm text-sm font-semibold tracking-tight hover:opacity-90 active:scale-[0.98] transition-all" href="#dialogue">
           Get in touch
         </a>
       </nav>
     </header>
 
     <main>
-      <section class="relative min-h-screen flex items-center pt-24 px-12 overflow-hidden bg-surface-container-lowest">
+      <section class="relative min-h-[calc(100svh-4rem)] md:min-h-screen flex items-center pt-20 md:pt-24 px-4 sm:px-6 md:px-12 overflow-hidden bg-surface-container-lowest">
         <div class="absolute inset-0 schematic-grid opacity-[0.04] pointer-events-none"></div>
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none">
+        <div class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none">
           <svg fill="none" height="600" viewBox="0 0 600 600" width="600" xmlns="http://www.w3.org/2000/svg">
             <circle cx="200" cy="300" r="199.5" stroke="#01696E"></circle>
             <circle cx="400" cy="300" r="199.5" stroke="#01696E"></circle>
@@ -47,17 +47,17 @@
 
         <div class="max-w-7xl mx-auto w-full relative z-10">
           <div class="max-w-5xl">
-            <h1 class="font-archivo text-6xl md:text-8xl font-black tracking-tight leading-[0.95] text-primary mb-10">
+            <h1 class="font-archivo text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.02] md:leading-[0.95] text-primary mb-6 md:mb-10">
               Independent advice when important decisions are still taking shape
             </h1>
-            <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed mb-12">
+            <p class="font-body text-base sm:text-lg md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed mb-8 md:mb-12">
               I work with organisations across sport, recreation, and public-sector settings on complex decisions involving facilities, investment, partnerships, and system response, before commitments are made and before weak assumptions turn into harder problems.
             </p>
-            <div class="flex flex-wrap gap-6">
-              <a class="bg-primary-container text-on-primary px-10 py-4 rounded-sm font-bold tracking-tight hover:opacity-90 transition-all" href="#dialogue">
+            <div class="flex flex-wrap gap-3 sm:gap-4 md:gap-6">
+              <a class="inline-flex items-center justify-center min-h-12 bg-primary-container text-on-primary px-6 md:px-10 py-3.5 md:py-4 rounded-sm font-bold tracking-tight hover:opacity-90 transition-all" href="#dialogue">
                 Get in touch
               </a>
-              <a class="border border-outline-variant/30 text-on-surface px-10 py-4 rounded-sm font-bold tracking-tight hover:bg-surface-container transition-all" href="#evidence">
+              <a class="inline-flex items-center justify-center min-h-12 border border-outline-variant/40 text-on-surface px-6 md:px-10 py-3.5 md:py-4 rounded-sm font-bold tracking-tight hover:bg-surface-container transition-all" href="#evidence">
                 View experience
               </a>
             </div>
@@ -65,36 +65,36 @@
         </div>
       </section>
 
-      <section class="py-32 px-12 bg-surface-container-low border-none" id="threshold">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+      <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-surface-container-low border-none" id="threshold">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           <div class="md:col-span-4">
             <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">01 / Timing</span>
-            <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">When to bring me in</h2>
+            <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 md:mb-8">When to bring me in</h2>
           </div>
           <div class="md:col-span-8">
-            <ul class="space-y-6 mb-16">
+            <ul class="space-y-4 sm:space-y-5 md:space-y-6 mb-10 md:mb-16">
               {['direction is not yet settled', 'options are contested', 'investment case is forming', 'pressure to move, but readiness is unclear', 'consequences of getting the next step wrong are material'].map((text) => (
                 <li class="flex items-start gap-6 group">
                   <span class="material-symbols-outlined text-primary mt-1" aria-hidden="true">arrow_right_alt</span>
-                  <span class="text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">{text}</span>
+                  <span class="text-lg sm:text-xl md:text-2xl font-medium text-on-surface opacity-80 group-hover:opacity-100 transition-opacity">{text}</span>
                 </li>
               ))}
             </ul>
-            <p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+            <p class="font-body text-base sm:text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
               This is usually the point where independent advice adds most value, when the direction is still taking shape, the pressure to move is real, and the quality of the next step matters.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="py-32 px-12 bg-surface" id="advisory">
+      <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-surface" id="advisory">
         <div class="max-w-7xl mx-auto">
           <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">02 / Role</span>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
             <div>
-              <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">How I help</h2>
+              <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 md:mb-8">How I help</h2>
             </div>
-            <div class="font-body text-xl text-on-surface space-y-8 leading-relaxed">
+            <div class="font-body text-base sm:text-lg md:text-xl text-on-surface space-y-5 md:space-y-8 leading-relaxed">
               <p>I provide independent advice when organisations need to decide what to do, why it stacks up, and whether the timing is right.</p>
               <p>The work usually involves clarifying the real decision, testing assumptions and investment logic, working through stakeholder complexity, and assessing sequencing, readiness, and risk.</p>
               <p>I am usually brought in early enough to question the brief, sharpen the case, and reduce the risk of premature lock-in.</p>
@@ -103,17 +103,17 @@
         </div>
       </section>
 
-      <section class="py-32 px-12 bg-surface-dim" id="evidence">
+      <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-surface-dim" id="evidence">
         <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-8">
+          <div class="flex flex-col md:flex-row justify-between items-baseline mb-10 md:mb-16 gap-5 md:gap-8">
             <div>
               <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">03 / Experience</span>
-              <h2 class="font-archivo text-4xl font-black text-on-surface">Selected experience</h2>
+              <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface">Selected experience</h2>
             </div>
             <p class="text-on-surface-variant max-w-md">Experience across sport, recreation, local and central government, and decision-making around facilities, investment, access, and systems.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-outline-variant/10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-outline-variant/10">
             {[
               { cat: "PLANNING & INVESTMENT", title: "Local authority planning and investment", desc: "Worked with Auckland local boards on sport and active recreation planning, access, and investment-related decisions." },
               { cat: "LEASING", title: "Public-sector systems and leasing", desc: "Led cross-council work to improve how community leasing decisions support public and community benefit." },
@@ -122,10 +122,10 @@
               { cat: "READINESS", title: "Major-event readiness", desc: "Worked within the FIFA Women’s World Cup host city programme across training venue settings." },
               { cat: "FUNDING", title: "Funding and investment administration", desc: "Managed a large regional KiwiSport funding portfolio, with direct responsibility for how investment decisions were administered." }
             ].map((item) => (
-              <div class="bg-white py-12 px-8 min-h-[280px] flex flex-col">
+              <div class="bg-white py-8 md:py-12 px-5 sm:px-7 md:px-8 min-h-[240px] md:min-h-[280px] flex flex-col">
                 <div class="max-w-2xl">
-                  <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-6">{item.cat}</span>
-                  <h3 class="text-2xl font-bold mb-4">{item.title}</h3>
+                  <span class="text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-4 md:mb-6">{item.cat}</span>
+                  <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">{item.title}</h3>
                   <p class="text-on-surface-variant">{item.desc}</p>
                 </div>
               </div>
@@ -134,17 +134,17 @@
         </div>
       </section>
 
-      <section class="py-32 px-12 bg-surface" id="principal">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div class="relative aspect-[4/5] bg-surface-dim overflow-hidden group">
+      <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-surface" id="principal">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+          <div class="relative aspect-[4/5] max-w-[360px] md:max-w-none bg-surface-dim overflow-hidden group">
             <img alt="Portrait of Hamish Rogers" class="portrait-editorial object-cover w-full h-full transition-all duration-700" src="/assets/hamish-portrait.jpg" />
-            <div class="absolute inset-0 border-[20px] border-surface pointer-events-none"></div>
+            <div class="absolute inset-0 border-[10px] md:border-[20px] border-surface pointer-events-none"></div>
           </div>
 
           <div>
             <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">04 / Principal</span>
-            <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">About Hamish Rogers</h2>
-            <div class="font-body text-lg text-on-surface-variant space-y-6 leading-relaxed">
+            <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 md:mb-8">About Hamish Rogers</h2>
+            <div class="font-body text-base md:text-lg text-on-surface-variant space-y-4 md:space-y-6 leading-relaxed">
               <p>My experience has shown me that many important decisions are made before the real problem is fully clear and before the underlying logic has been properly tested.</p>
               <p>Having worked across sport, recreation, facilities, funding, and public-sector environments, I understand how ideas take shape inside organisations, how competing pressures influence direction, and where weak assumptions can harden into more difficult problems later.</p>
               <p>My role is to help bring more clarity to the decision in front of you, test the logic behind it, and improve the quality of the next step before commitments settle in the wrong place.</p>
@@ -153,13 +153,13 @@
         </div>
       </section>
 
-      <section class="py-32 px-12 bg-surface-container-low" id="dialogue">
+      <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-surface-container-low" id="dialogue">
         <div class="max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             <div class="md:col-span-5">
               <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">05 / Contact</span>
-              <h2 class="font-archivo text-4xl font-black text-on-surface mb-8">Get in touch</h2>
-              <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+              <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 md:mb-8">Get in touch</h2>
+              <p class="text-on-surface-variant text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
                 If you are working through a decision like this, get in touch.
               </p>
               <div class="p-6 bg-surface-container-lowest rounded-sm">
@@ -169,8 +169,8 @@
             </div>
 
             <div class="md:col-span-7">
-              <form class="space-y-8 bg-surface-container-lowest p-10 shadow-sm" id="contact-form">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <form class="space-y-6 md:space-y-8 bg-surface-container-lowest p-6 sm:p-8 md:p-10 shadow-sm" id="contact-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
                     <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-1 block" for="name">Name</label>
                     <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 text-on-surface" id="name" name="name" placeholder="John Doe" type="text" required />
@@ -202,7 +202,7 @@
       </section>
     </main>
 
-    <footer class="bg-[#e8f6f6] dark:bg-[#021d1e] w-full py-20 px-12 border-t border-outline-variant/10">
+    <footer class="bg-[#e8f6f6] dark:bg-[#021d1e] w-full py-12 md:py-20 px-4 sm:px-6 md:px-12 border-t border-outline-variant/10">
       <div class="flex flex-col md:flex-row justify-between items-end w-full max-w-screen-2xl mx-auto gap-8">
         <div class="space-y-4">
           <div class="text-lg font-black text-[#032829] dark:text-[#eefcfc] uppercase tracking-tighter">
@@ -251,6 +251,24 @@
       .portrait-editorial:hover {
         filter: grayscale(40%) contrast(1.05) brightness(1.02);
         transform: scale(1.02);
+      }
+
+      #threshold,
+      #advisory,
+      #evidence,
+      #principal,
+      #dialogue {
+        scroll-margin-top: 5.25rem;
+      }
+
+      @media (min-width: 768px) {
+        #threshold,
+        #advisory,
+        #evidence,
+        #principal,
+        #dialogue {
+          scroll-margin-top: 6.75rem;
+        }
       }
     </style>
 
