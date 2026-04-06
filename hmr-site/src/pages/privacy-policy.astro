@@ -13,69 +13,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-surface text-on-surface antialiased font-body">
-    <header class="fixed top-0 w-full z-50 bg-[#eefcfc]/80 dark:bg-[#032829]/80 backdrop-blur-md border-b border-outline-variant/10">
-      <nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+    <header class="fixed top-0 w-full z-50 bg-[#eefcfc]/90 dark:bg-[#032829]/90 backdrop-blur-md border-b border-outline-variant/10">
+      <nav class="flex justify-between items-center w-full px-6 lg:px-12 py-4 lg:py-6 max-w-screen-2xl mx-auto">
         <a href="/" class="text-sm font-bold uppercase tracking-widest text-primary hover:opacity-70 transition-all flex items-center gap-2">
-          <span class="text-xl">←</span> Back to Home
+          <span class="text-xl leading-none -mt-1">←</span> Back to Home
         </a>
       </nav>
     </header>
 
-    <main class="pt-32 pb-24 px-12">
+    <main class="pt-24 md:pt-32 pb-16 md:pb-24 px-6 lg:px-12">
       <div class="max-w-4xl mx-auto">
-        <section class="mb-16">
+        <section class="mb-12 md:mb-16">
           <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">Legal</span>
-          <h1 class="font-archivo text-5xl md:text-7xl font-black tracking-tight leading-[0.95] text-primary mb-8">
+          <h1 class="font-archivo text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.05] md:leading-[0.95] text-primary mb-6 md:mb-8">
             Privacy Policy
           </h1>
-          <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl">
+          <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl">
             HMR Sport Solutions respects your privacy and handles personal information with care.
           </p>
           <p class="text-sm text-on-surface-variant/60 mt-4">Last updated: 6 April 2026</p>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-outline-variant/20 pt-12">
-          <div class="md:col-span-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 border-t border-outline-variant/20 pt-8 md:pt-12">
+          <div class="lg:col-span-4">
             <p class="text-sm font-bold text-primary uppercase tracking-widest">Our Commitment</p>
           </div>
           
-          <div class="md:col-span-8 space-y-12">
+          <div class="lg:col-span-8 space-y-10 md:space-y-12">
             <section>
-              <h2 class="font-archivo text-2xl font-black text-on-surface mb-4">What I collect</h2>
-              <p class="text-on-surface-variant text-lg leading-relaxed">
+              <h2 class="font-archivo text-2xl md:text-3xl font-black text-on-surface mb-3 md:mb-4">What I collect</h2>
+              <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
                 If you contact me through the website form, I may collect your name, organisation, email address, and the message you submit.
               </p>
             </section>
 
             <section>
-              <h2 class="font-archivo text-2xl font-black text-on-surface mb-4">Why I collect it</h2>
-              <p class="text-on-surface-variant text-lg leading-relaxed">
+              <h2 class="font-archivo text-2xl md:text-3xl font-black text-on-surface mb-3 md:mb-4">Why I collect it</h2>
+              <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
                 I collect this information so I can respond to your enquiry, communicate with you about potential advisory work, and keep a record of enquiries received through the website.
               </p>
             </section>
 
             <section>
-              <h2 class="font-archivo text-2xl font-black text-on-surface mb-4">Storage and security</h2>
-              <p class="text-on-surface-variant text-lg leading-relaxed">
+              <h2 class="font-archivo text-2xl md:text-3xl font-black text-on-surface mb-3 md:mb-4">Storage and security</h2>
+              <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
                 Information submitted may be stored using service providers like Google Workspace and website hosting tools. I take reasonable steps to protect personal information from loss or unauthorised access.
               </p>
             </section>
 
-            <section class="p-8 bg-surface-container-low border border-outline-variant/10">
-              <h2 class="font-archivo text-2xl font-black text-on-surface mb-4">Contact</h2>
-              <p class="text-on-surface-variant mb-6">
+            <section class="p-6 md:p-8 bg-surface-container-low border border-outline-variant/10 rounded-sm">
+              <h2 class="font-archivo text-xl md:text-2xl font-black text-on-surface mb-3 md:mb-4">Contact</h2>
+              <p class="text-on-surface-variant mb-4 md:mb-6 text-base md:text-lg">
                 If you have any privacy questions or would like to request access to your information, please contact:
               </p>
               <p class="font-bold text-on-surface">Hamish Rogers</p>
-              <a href="mailto:hamish@hmrsportsolutions.co" class="text-primary font-bold hover:underline">hamish@hmrsportsolutions.co</a>
+              <a href="mailto:hamish@hmrsportsolutions.co" class="text-primary font-bold hover:underline break-all">hamish@hmrsportsolutions.co</a>
             </section>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="py-12 px-12 border-t border-outline-variant/10 text-center">
-      <p class="text-xs text-on-surface-variant opacity-60">HMR Sport Solutions © 2026</p>
+    <footer class="py-10 md:py-12 px-6 lg:px-12 border-t border-outline-variant/10 text-center">
+      <p class="text-xs text-on-surface-variant opacity-60">HMR Sport Solutions © {new Date().getFullYear()}</p>
     </footer>
   </body>
 </html>
