@@ -193,11 +193,24 @@
 
             <div class="lg:col-span-7">
               <form class="space-y-6 md:space-y-8 bg-surface-container-lowest p-6 md:p-10 shadow-sm rounded-sm" id="contact-form">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                  <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
-                    <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-2 block" for="name">Name</label>
-                    <input class="w-full bg-transparent border-none p-0 pb-3 min-h-[44px] focus:ring-0 text-on-surface" id="name" name="name" placeholder="John Doe" type="text" required />
-                  </div>
+                <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-px md:bg-outline-variant/20 md:overflow-visible pb-6 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+            {[
+              { cat: "PLANNING & INVESTMENT", title: "Local authority planning and investment", desc: "Worked with Auckland local boards on sport and active recreation planning, access, and investment-related decisions." },
+              { cat: "LEASING", title: "Public-sector systems and leasing", desc: "Led cross-council work to improve how community leasing decisions support public and community benefit." },
+              { cat: "FACILITY DESIGN & OPERATIONS", title: "Hiwa – University of Auckland Recreation Centre", desc: "Worked across design, facility transition, operational setup, and growth, with direct visibility into how early decisions carry through into operating reality." },
+              { cat: "SPORT SYSTEMS", title: "National sport and system context", desc: "Worked across Sport New Zealand in roles spanning sport development, system-level work, and management of the Balance is Better digital platform." },
+              { cat: "READINESS", title: "Major-event readiness", desc: "Worked within the FIFA Women’s World Cup host city programme across training venue settings." },
+              { cat: "FUNDING", title: "Funding and investment administration", desc: "Managed a large regional KiwiSport funding portfolio, with direct responsibility for how investment decisions were administered." }
+            ].map((item) => (
+              <div class="flex-none w-[85vw] sm:w-[60vw] md:w-auto snap-start bg-white p-8 lg:p-12 min-h-[260px] flex flex-col hover:bg-surface-container-lowest transition-colors border border-outline-variant/20 md:border-none shadow-sm md:shadow-none rounded-md md:rounded-none">
+                <div class="max-w-2xl">
+                  <span class="text-[10px] md:text-[11px] font-bold tracking-[0.18em] text-primary uppercase block mb-4 lg:mb-6">{item.cat}</span>
+                  <h3 class="text-xl md:text-2xl font-bold mb-3 lg:mb-4">{item.title}</h3>
+                  <p class="text-on-surface-variant leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
                   <div class="relative border-b border-outline-variant focus-within:border-primary transition-colors">
                     <label class="text-[10px] uppercase font-bold tracking-widest text-outline-variant mb-2 block" for="organisation">Organisation</label>
                     <input class="w-full bg-transparent border-none p-0 pb-3 min-h-[44px] focus:ring-0 text-on-surface" id="organisation" name="organisation" placeholder="Public Sector Org" type="text" />
@@ -276,6 +289,14 @@
       /* Lock body scroll when mobile menu is open */
       body.menu-open {
         overflow: hidden;
+      }
+/* Hide scrollbar for the mobile carousel */
+      .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
       }
     </style>
 
