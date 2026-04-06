@@ -39,6 +39,21 @@
           </svg>
         </button>
       </nav>
+
+      <div id="mobile-menu" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-28 px-6 pb-8 gap-8 bg-surface">
+        <nav class="flex flex-col gap-6 text-2xl font-bold tracking-tight">
+          <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#threshold">When to bring me in</a>
+          <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#advisory">How I help</a>
+          <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#evidence">Experience</a>
+          <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#principal">About</a>
+          <a class="mobile-link text-[#111e1e] dark:text-[#eefcfc] hover:text-primary transition-colors" href="#dialogue">Contact</a>
+        </nav>
+        <div class="mt-auto">
+          <a class="mobile-link block w-full text-center bg-primary-container text-on-primary px-6 py-4 rounded-sm text-lg font-bold hover:opacity-90 active:scale-[0.98] transition-all" href="#dialogue">
+            Get in touch
+          </a>
+        </div>
+      </div>
     </header>
 
     <!-- Mobile Menu - Moved outside header to prevent backdrop-blur from trapping fixed positioning -->
