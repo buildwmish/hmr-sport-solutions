@@ -41,6 +41,8 @@ const fetchAccessToken = async ({ serviceAccountEmail, privateKey }) => {
   });
 
   if (!response.ok) {
+    const errorData = await response.text();
+    console.error('Auth response error:', errorData);
     throw new Error(`OAuth token request failed: ${response.status}`);
   }
 
@@ -53,22 +55,29 @@ exports.handler = async (event) => {
 
   try {
     const payload = JSON.parse(event.body || '{}');
-    const missing = REQUIRED_FIELDS.filter((field) => !String(payload[field] || '').trim());
+    console.log('Received payload:', payload.email); // Log for debugging
 
+    const missing = REQUIRED_FIELDS.filter((field) => !String(payload[field] || '').trim());
     if (missing.length) {
       return json(400, { error: `Missing required fields: ${missing.join(', ')}` });
     }
 
-    const serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-    const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
-    const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
+    // UPDATED: Variables now match your Netlify Environment Variable keys
+    const serviceAccountEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
+    const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
+    const rawKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
     const range = process.env.GOOGLE_SHEETS_RANGE || 'Sheet1!A:F';
 
-    if (!serviceAccountEmail || !privateKey || !spreadsheetId) {
-      return json(500, { error: 'Missing Google Sheets environment configuration.' });
+    if (!serviceAccountEmail || !rawKey || !spreadsheetId) {
+      console.error('Config Error: Missing one or more GOOGLE_SHEETS env vars');
+      return json(500, { error: 'Server configuration error.' });
     }
 
+    // Fix newlines in the private key
+    const privateKey = rawKey.replace(/\\n/g, '\n');
+
     const token = await fetchAccessToken({ serviceAccountEmail, privateKey });
+    
     const row = [
       new Date().toISOString(),
       payload.name,
@@ -90,12 +99,15 @@ exports.handler = async (event) => {
     });
 
     if (!appendResponse.ok) {
+      const sheetError = await appendResponse.text();
+      console.error('Google Sheets Error:', sheetError);
       throw new Error(`Sheets append failed: ${appendResponse.status}`);
     }
 
+    console.log('Successfully appended to sheet');
     return json(200, { ok: true });
   } catch (error) {
-    console.error('Contact submit failed', error);
+    console.error('Detailed Function Error:', error.message);
     return json(500, { error: 'Unable to submit enquiry right now.' });
   }
 };
