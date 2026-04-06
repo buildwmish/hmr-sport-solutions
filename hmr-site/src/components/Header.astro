@@ -24,6 +24,8 @@ import logo from '../assets/img/logo.svg';
     <a class="header-cta" href="#contact">Get in touch</a>
   </div>
 
+  <button class="mobile-panel-backdrop" type="button" hidden data-mobile-backdrop aria-label="Close menu"></button>
+
   <div class="mobile-panel" id="mobile-nav" hidden data-mobile-panel>
     <nav aria-label="Mobile">
       <a href="#when-to-bring-me-in">When to bring me in</a>
@@ -38,14 +40,16 @@ import logo from '../assets/img/logo.svg';
 <script>
   const toggle = document.querySelector('[data-menu-toggle]');
   const panel = document.querySelector('[data-mobile-panel]');
+  const backdrop = document.querySelector('[data-mobile-backdrop]');
 
-  if (toggle && panel) {
+  if (toggle && panel && backdrop) {
     const links = panel.querySelectorAll('a');
 
     const closeMenu = () => {
       toggle.setAttribute('aria-expanded', 'false');
       toggle.classList.remove('is-open');
       panel.setAttribute('hidden', '');
+      backdrop.setAttribute('hidden', '');
       document.body.classList.remove('menu-open');
     };
 
@@ -56,14 +60,20 @@ import logo from '../assets/img/logo.svg';
 
       if (isOpen) {
         panel.setAttribute('hidden', '');
+        backdrop.setAttribute('hidden', '');
       } else {
         panel.removeAttribute('hidden');
+        backdrop.removeAttribute('hidden');
       }
 
       document.body.classList.toggle('menu-open', !isOpen);
     });
 
+    backdrop.addEventListener('click', closeMenu);
     links.forEach((link) => link.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900) closeMenu();
     });

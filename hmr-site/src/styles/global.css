@@ -220,11 +220,26 @@ p {
   background: var(--white);
   border-left: var(--border);
   padding: var(--space-lg);
+  z-index: 60;
+}
+
+.mobile-panel-backdrop {
+  position: fixed;
+  inset: 4.5rem 0 0;
+  border: 0;
+  background: color-mix(in srgb, var(--ink-deep) 24%, transparent);
+  z-index: 55;
 }
 
 .mobile-panel nav {
   display: grid;
   gap: 1.1rem;
+}
+
+.mobile-panel a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
 }
 
 .hero {
@@ -289,6 +304,19 @@ p {
 .experience-list {
   display: grid;
   gap: var(--space-md);
+}
+
+.experience-controls {
+  display: none;
+}
+
+.carousel-control {
+  border: var(--border);
+  background: var(--white);
+  color: var(--ink-deep);
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.9rem;
 }
 
 .experience-card {
@@ -430,8 +458,36 @@ p {
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
   .header-cta {
     display: none;
+  }
+
+  .hero {
+    padding-top: var(--space-xl);
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .text-link {
+    width: 100%;
+  }
+
+  .hero-art {
+    width: min(100%, 460px);
+  }
+
+  .experience-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
   }
 
   .experience-list {
@@ -443,11 +499,23 @@ p {
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     padding-bottom: var(--space-xs);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .experience-list::-webkit-scrollbar {
+    display: none;
   }
 
   .experience-card {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
     scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .experience-list {
+    scroll-snap-type: none;
   }
 }
