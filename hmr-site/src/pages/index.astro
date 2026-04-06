@@ -53,43 +53,49 @@ import lineArtTwo from '../assets/img/line-art-2.svg';
     <section id="experience" class="section section-soft">
       <div class="container">
         <SectionIntro heading="Selected experience" />
-        <div class="experience-list">
-          <ExperienceCard
-            number={1}
-            title="Local board advisory work"
-            bodyOne="Commissioned by multiple Auckland local boards on fixed-scope sport and active recreation planning and access-related work."
-            bodyTwo="The focus has been on helping decision-makers work through supply, demand, provision, investment priorities, advocacy priorities and local access questions before further commitments are made."
-          />
-          <ExperienceCard
-            number={2}
-            title="Public-sector systems and leasing decisions"
-            bodyOne="Led cross-council work to improve the community leasing process so peppercorn leases could be used more effectively to deliver public and community benefit."
-            bodyTwo="This involved balancing policy intent, sector input, implementation realities and competing priorities inside local government."
-          />
-          <ExperienceCard
-            number={3}
-            title="University recreation facility readiness"
-            bodyOne="Worked within a major university recreation environment during facility transition, operational setup and business unit growth."
-            bodyTwo="That created direct visibility into how early planning, design and investment decisions translate into operating reality once a facility opens."
-          />
-          <ExperienceCard
-            number={4}
-            title="National sport and system context"
-            bodyOne="Worked across Sport New Zealand in roles spanning sport development, special projects and the ongoing development of the Balance is Better platform."
-            bodyTwo="This provided strong exposure to how direction is formed within institutions, how priorities are interpreted across functions, and how national thinking is carried into the sector."
-          />
-          <ExperienceCard
-            number={5}
-            title="Major event readiness"
-            bodyOne="Worked within the FIFA Women’s World Cup host city programme across training venue settings."
-            bodyTwo="This meant operating in a setting where sequencing, coordination, readiness and public scrutiny all mattered under fixed deadlines."
-          />
-          <ExperienceCard
-            number={6}
-            title="Regional funding and programme scale"
-            bodyOne="Led regional KiwiSport investment and helped scale the Good Sports programme from pilot to nationally recognised programme."
-            bodyTwo="This built practical experience in how funding settings, programme design and stakeholder incentives shape behaviour and outcomes across a wider system. Good Sports later received national recognition for its impact."
-          />
+        <div class="experience-carousel" data-carousel>
+          <div class="experience-controls" aria-label="Experience carousel controls">
+            <button type="button" class="carousel-control" data-carousel-prev>Previous</button>
+            <button type="button" class="carousel-control" data-carousel-next>Next</button>
+          </div>
+          <div class="experience-list" data-carousel-track>
+            <ExperienceCard
+              number={1}
+              title="Local board advisory work"
+              bodyOne="Commissioned by multiple Auckland local boards on fixed-scope sport and active recreation planning and access-related work."
+              bodyTwo="The focus has been on helping decision-makers work through supply, demand, provision, investment priorities, advocacy priorities and local access questions before further commitments are made."
+            />
+            <ExperienceCard
+              number={2}
+              title="Public-sector systems and leasing decisions"
+              bodyOne="Led cross-council work to improve the community leasing process so peppercorn leases could be used more effectively to deliver public and community benefit."
+              bodyTwo="This involved balancing policy intent, sector input, implementation realities and competing priorities inside local government."
+            />
+            <ExperienceCard
+              number={3}
+              title="University recreation facility readiness"
+              bodyOne="Worked within a major university recreation environment during facility transition, operational setup and business unit growth."
+              bodyTwo="That created direct visibility into how early planning, design and investment decisions translate into operating reality once a facility opens."
+            />
+            <ExperienceCard
+              number={4}
+              title="National sport and system context"
+              bodyOne="Worked across Sport New Zealand in roles spanning sport development, special projects and the ongoing development of the Balance is Better platform."
+              bodyTwo="This provided strong exposure to how direction is formed within institutions, how priorities are interpreted across functions, and how national thinking is carried into the sector."
+            />
+            <ExperienceCard
+              number={5}
+              title="Major event readiness"
+              bodyOne="Worked within the FIFA Women’s World Cup host city programme across training venue settings."
+              bodyTwo="This meant operating in a setting where sequencing, coordination, readiness and public scrutiny all mattered under fixed deadlines."
+            />
+            <ExperienceCard
+              number={6}
+              title="Regional funding and programme scale"
+              bodyOne="Led regional KiwiSport investment and helped scale the Good Sports programme from pilot to nationally recognised programme."
+              bodyTwo="This built practical experience in how funding settings, programme design and stakeholder incentives shape behaviour and outcomes across a wider system. Good Sports later received national recognition for its impact."
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -134,3 +140,26 @@ import lineArtTwo from '../assets/img/line-art-2.svg';
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  const carousel = document.querySelector('[data-carousel]');
+  const track = carousel?.querySelector('[data-carousel-track]');
+  const prevButton = carousel?.querySelector('[data-carousel-prev]');
+  const nextButton = carousel?.querySelector('[data-carousel-next]');
+
+  if (track && prevButton && nextButton) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const moveByCard = (direction) => {
+      const card = track.querySelector('.experience-card');
+      if (!card) return;
+      const styles = window.getComputedStyle(track);
+      const gap = Number.parseFloat(styles.columnGap || styles.gap || '0');
+      const amount = card.getBoundingClientRect().width + gap;
+      track.scrollBy({ left: direction * amount, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    };
+
+    prevButton.addEventListener('click', () => moveByCard(-1));
+    nextButton.addEventListener('click', () => moveByCard(1));
+  }
+</script>

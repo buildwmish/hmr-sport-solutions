@@ -292,6 +292,19 @@ p {
   min-height: 2.75rem;
 }
 
+.hero-actions .text-link {
+  min-height: 2.75rem;
+}
+
+.hero-actions .text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.2rem;
+  border: var(--border);
+  text-decoration: none;
+}
+
 .hero-art {
   justify-self: end;
   width: min(100%, 560px);
@@ -317,6 +330,19 @@ p {
 .experience-list {
   display: grid;
   gap: var(--space-md);
+}
+
+.experience-controls {
+  display: none;
+}
+
+.carousel-control {
+  border: var(--border);
+  background: var(--white);
+  color: var(--ink-deep);
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.9rem;
 }
 
 .experience-card {
@@ -480,34 +506,15 @@ p {
 
 @media (max-width: 640px) {
   .section {
-    padding: 2.8rem 0;
-  }
-
-  main section[id] {
-    scroll-margin-top: 4.7rem;
+    padding: var(--space-xl) 0;
   }
 
   .header-cta {
     display: none;
   }
 
-  .mobile-panel {
-    top: 3.8rem;
-    height: calc(100dvh - 3.8rem);
-    width: min(100vw, 320px);
-  }
-
-  .mobile-panel-backdrop {
-    inset: 3.8rem 0 0;
-  }
-
   .hero {
-    padding: 4rem 0 2.6rem;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 10vw, 2.7rem);
-    line-height: 1.18;
+    padding-top: var(--space-xl);
   }
 
   .hero-actions {
@@ -522,37 +529,42 @@ p {
 
   .hero-art {
     display: none;
+    width: min(100%, 460px);
+  }
+
+  .experience-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
   }
 
   .experience-list {
     display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(85%, 1fr);
     gap: var(--space-sm);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-xs);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .experience-list::-webkit-scrollbar {
+    display: none;
   }
 
   .experience-card {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
-    padding: 1.15rem;
+    scroll-snap-align: start;
   }
+}
 
-  .about-art {
-    display: none;
-  }
-
-  .prose p {
-    margin-bottom: 1.05rem;
-  }
-
-  .section-intro {
-    margin-bottom: 1rem;
-  }
-
-  .form-grid {
-    gap: 0.95rem;
-  }
-
-  .contact-form .btn {
-    width: 100%;
-    min-height: 3rem;
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .experience-list {
+    scroll-snap-type: none;
   }
 }
