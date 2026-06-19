@@ -1,13 +1,42 @@
 ---
 // HMR Sport Solutions - Astro Conversion v2
+const siteUrl = 'https://hmrsportsolutions.co/';
+const pageTitle = 'Independent Sport & Recreation Advisor NZ | HMR Sport Solutions';
+const pageDescription = 'Independent advice for sport, recreation and public-interest organisations when important decisions are still taking shape. Clarify direction, test assumptions and move forward with confidence.';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'HMR Sport Solutions',
+  url: siteUrl,
+  description: pageDescription,
+  areaServed: {
+    '@type': 'Country',
+    name: 'New Zealand'
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Hamish Rogers'
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/hamishrogers/'
+  ]
+};
 ---
 
 <html class="scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>HMR Sport Solutions | Independent advice for senior decision-makers</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="HMR Sport Solutions" />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -75,7 +104,7 @@
             </h1>
         
             <p class="font-body text-lg md:text-xl lg:text-2xl text-on-surface-variant max-w-2xl leading-relaxed mb-10 md:mb-12">
-              I work with organisations across sport, recreation, and public-sector settings on complex decisions involving facilities, investment, partnerships, and system response, before commitments are made and before weak assumptions turn into harder problems.
+              I work with organisations across sport, recreation, and public-interest settings on complex decisions involving facilities, investment, partnerships, and system response, before commitments are made and before weak assumptions turn into harder problems.
             </p>
             
             <div class="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
@@ -121,9 +150,23 @@
             </div>
             <div class="font-body text-lg md:text-xl text-on-surface space-y-6 lg:space-y-8 leading-relaxed">
               <p>I provide independent advice when organisations need to decide what to do, why it stacks up, and whether the timing is right.</p>
-              <p>The work usually involves clarifying the real decision, testing assumptions and investment logic, working through stakeholder complexity, and assessing sequencing, readiness, and risk.</p>
+              <p>The work usually involves clarifying the real decision, testing assumptions and investment logic, working through stakeholder complexity, and assessing sequencing, readiness, and risk, including around facility investment and planning decisions.</p>
               <p>I am usually brought in early enough to question the brief, sharpen the case, and reduce the risk of premature lock-in.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 lg:py-32 px-6 lg:px-12 bg-surface-container-low scroll-mt-20 lg:scroll-mt-28" id="answer">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <div class="lg:col-span-4">
+            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">03 / Answer</span>
+            <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 lg:mb-8">What does HMR Sport Solutions do?</h2>
+          </div>
+          <div class="lg:col-span-8">
+            <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-3xl leading-relaxed">
+              HMR Sport Solutions provides independent advice to organisations in sport, recreation, and public-interest settings when important decisions are still taking shape. The work helps leaders clarify direction, test assumptions, assess investment logic, navigate stakeholder complexity, and decide whether the timing is right.
+            </p>
           </div>
         </div>
       </section>
@@ -132,7 +175,7 @@
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-col lg:flex-row justify-between items-start lg:items-baseline mb-12 lg:mb-16 gap-6 lg:gap-8">
             <div>
-              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">03 / Experience</span>
+              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">04 / Experience</span>
               <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface">Selected experience</h2>
             </div>
             <p class="text-on-surface-variant max-w-md text-lg leading-relaxed lg:text-right">Experience across sport, recreation, local and central government, and decision-making around facilities, investment, access, and systems.</p>
@@ -167,7 +210,7 @@
           </div>
 
           <div class="order-1 lg:order-2">
-            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">04 / Principal</span>
+            <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">05 / Principal</span>
             <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 lg:mb-8">About Hamish Rogers</h2>
             <div class="font-body text-lg text-on-surface-variant space-y-6 leading-relaxed">
               <p>My experience has shown me that many important decisions are made before the real problem is fully clear and before the underlying logic has been properly tested.</p>
@@ -182,7 +225,7 @@
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div class="lg:col-span-5">
-              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">05 / Contact</span>
+              <span class="font-label text-xs font-bold tracking-[0.2em] text-primary block mb-4 uppercase">06 / Contact</span>
               <h2 class="font-archivo text-3xl md:text-4xl font-black text-on-surface mb-6 lg:mb-8">Get in touch</h2>
               <p class="text-on-surface-variant text-lg lg:text-xl mb-8 lg:mb-10 leading-relaxed">
                 If you are working through a decision like this, get in touch.
