@@ -1,12 +1,22 @@
 ---
 // Privacy Policy Page for HMR Sport Solutions
+const pageTitle = 'Privacy Policy | HMR Sport Solutions';
+const pageDescription = 'How HMR Sport Solutions handles personal information submitted through the website.';
+const canonicalUrl = 'https://hmrsportsolutions.co/privacy-policy';
 ---
 
 <html class="scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy | HMR Sport Solutions</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="HMR Sport Solutions" />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
