@@ -2,6 +2,31 @@
   command = "npm run build"
   publish = "dist"
 
+[[redirects]]
+  from = "/services-facilities"
+  to = "/#advisory"
+  status = 301
+
+[[redirects]]
+  from = "/services-sport-development"
+  to = "/#advisory"
+  status = 301
+
+[[redirects]]
+  from = "/services-technology"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services-story-content"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services-insights-evaluation"
+  to = "/#advisory"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
